@@ -17,4 +17,41 @@
             FlowLayoutPanel1.Controls.Add(tempJetSet)
         End If
     End Sub
+
+    Private Sub SaveConfigToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveConfigToolStripMenuItem.Click
+        Dim config As New XDocument(<conf></conf>)
+        For Each item As JetSet In FlowLayoutPanel1.Controls
+            config.Element("conf").Add(item.generateSave)
+        Next
+        Select Case SaveFileDialog1.ShowDialog
+            Case DialogResult.OK
+                Try
+                    config.Save(SaveFileDialog1.FileName)
+                Catch ex As Exception
+                    MsgBox("Error while saving config", MsgBoxStyle.Critical)
+                End Try
+        End Select
+    End Sub
+
+    Private Sub LoadConfigToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoadConfigToolStripMenuItem.Click
+        Select Case OpenFileDialog1.ShowDialog
+            Case DialogResult.OK
+                Try
+                    Dim config As XDocument = XDocument.Load(OpenFileDialog1.FileName)
+                    clearJetSets()
+                    For Each item As XElement In config.Element("conf").Elements("jetset")
+                        Dim tempJetSet As New JetSet
+                        tempJetSet.loadSave(item)
+                        FlowLayoutPanel1.Controls.Add(tempJetSet)
+                    Next
+                Catch ex As Exception
+                    MsgBox("Error during loding config", MsgBoxStyle.Critical)
+                End Try
+        End Select
+    End Sub
+    Sub clearJetSets()
+        For Each item As JetSet In FlowLayoutPanel1.Controls
+            item.Dispose()
+        Next
+    End Sub
 End Class

@@ -132,6 +132,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\file.png" />
+    <None Include="Resources\save.png" />
     <None Include="Resources\Exit.ico" />
     <Content Include="Webbrowser.ico" />
   </ItemGroup>

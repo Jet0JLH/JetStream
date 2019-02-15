@@ -35,11 +35,12 @@ Partial Class JetSet
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.PreviewLabel = New System.Windows.Forms.Label()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.TextBoxName = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -50,7 +51,7 @@ Partial Class JetSet
         '
         'RichTextBox1
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(6, 21)
+        Me.RichTextBox1.Location = New System.Drawing.Point(10, 21)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.Size = New System.Drawing.Size(321, 116)
         Me.RichTextBox1.TabIndex = 0
@@ -58,7 +59,7 @@ Partial Class JetSet
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(6, 21)
+        Me.TextBox1.Location = New System.Drawing.Point(6, 22)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ReadOnly = True
         Me.TextBox1.Size = New System.Drawing.Size(258, 22)
@@ -66,16 +67,16 @@ Partial Class JetSet
         '
         'ButtonPath
         '
-        Me.ButtonPath.Location = New System.Drawing.Point(269, 21)
+        Me.ButtonPath.Location = New System.Drawing.Point(266, 21)
         Me.ButtonPath.Name = "ButtonPath"
-        Me.ButtonPath.Size = New System.Drawing.Size(31, 23)
+        Me.ButtonPath.Size = New System.Drawing.Size(37, 23)
         Me.ButtonPath.TabIndex = 2
         Me.ButtonPath.Text = "..."
         Me.ButtonPath.UseVisualStyleBackColor = True
         '
         'NumericUpDown1
         '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(201, 52)
+        Me.NumericUpDown1.Location = New System.Drawing.Point(205, 52)
         Me.NumericUpDown1.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
         Me.NumericUpDown1.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.NumericUpDown1.Name = "NumericUpDown1"
@@ -87,7 +88,7 @@ Partial Class JetSet
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(285, 54)
+        Me.Label1.Location = New System.Drawing.Point(289, 54)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(15, 17)
         Me.Label1.TabIndex = 4
@@ -95,7 +96,7 @@ Partial Class JetSet
         '
         'TrackBar1
         '
-        Me.TrackBar1.Location = New System.Drawing.Point(6, 18)
+        Me.TrackBar1.Location = New System.Drawing.Point(10, 18)
         Me.TrackBar1.Maximum = 200
         Me.TrackBar1.Minimum = 1
         Me.TrackBar1.Name = "TrackBar1"
@@ -105,10 +106,11 @@ Partial Class JetSet
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Controls.Add(Me.NumericUpDown1)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.TrackBar1)
-        Me.GroupBox1.Location = New System.Drawing.Point(342, 95)
+        Me.GroupBox1.Location = New System.Drawing.Point(346, 95)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(307, 82)
         Me.GroupBox1.TabIndex = 6
@@ -119,7 +121,7 @@ Partial Class JetSet
         '
         Me.GroupBox2.Controls.Add(Me.TextBox1)
         Me.GroupBox2.Controls.Add(Me.ButtonPath)
-        Me.GroupBox2.Location = New System.Drawing.Point(342, 34)
+        Me.GroupBox2.Location = New System.Drawing.Point(346, 34)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(307, 55)
         Me.GroupBox2.TabIndex = 6
@@ -129,7 +131,7 @@ Partial Class JetSet
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.RichTextBox1)
-        Me.GroupBox3.Location = New System.Drawing.Point(3, 34)
+        Me.GroupBox3.Location = New System.Drawing.Point(7, 34)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(333, 143)
         Me.GroupBox3.TabIndex = 7
@@ -139,7 +141,7 @@ Partial Class JetSet
         'GroupBox4
         '
         Me.GroupBox4.Controls.Add(Me.PreviewLabel)
-        Me.GroupBox4.Location = New System.Drawing.Point(3, 183)
+        Me.GroupBox4.Location = New System.Drawing.Point(7, 183)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(646, 91)
         Me.GroupBox4.TabIndex = 8
@@ -149,7 +151,7 @@ Partial Class JetSet
         'PreviewLabel
         '
         Me.PreviewLabel.AutoSize = True
-        Me.PreviewLabel.Location = New System.Drawing.Point(7, 22)
+        Me.PreviewLabel.Location = New System.Drawing.Point(11, 22)
         Me.PreviewLabel.Name = "PreviewLabel"
         Me.PreviewLabel.Size = New System.Drawing.Size(57, 17)
         Me.PreviewLabel.TabIndex = 0
@@ -158,22 +160,12 @@ Partial Class JetSet
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(3, 7)
+        Me.CheckBox1.Location = New System.Drawing.Point(7, 7)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(68, 21)
         Me.CheckBox1.TabIndex = 9
         Me.CheckBox1.Text = "Active"
         Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.BackgroundImage = Global.JetStream.My.Resources.Resources._Exit
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.Location = New System.Drawing.Point(611, 3)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(35, 35)
-        Me.Button1.TabIndex = 10
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'Timer1
         '
@@ -182,7 +174,7 @@ Partial Class JetSet
         '
         'TextBoxName
         '
-        Me.TextBoxName.Location = New System.Drawing.Point(128, 5)
+        Me.TextBoxName.Location = New System.Drawing.Point(132, 5)
         Me.TextBoxName.Name = "TextBoxName"
         Me.TextBoxName.Size = New System.Drawing.Size(202, 22)
         Me.TextBoxName.TabIndex = 11
@@ -190,16 +182,40 @@ Partial Class JetSet
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(77, 8)
+        Me.Label2.Location = New System.Drawing.Point(81, 8)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(45, 17)
         Me.Label2.TabIndex = 12
         Me.Label2.Text = "Name"
         '
+        'SaveFileDialog1
+        '
+        Me.SaveFileDialog1.Filter = "Textfile|*.txt"
+        '
+        'Button1
+        '
+        Me.Button1.BackgroundImage = Global.JetStream.My.Resources.Resources._Exit
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.Location = New System.Drawing.Point(615, 3)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(35, 35)
+        Me.Button1.TabIndex = 10
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(6, 54)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(109, 23)
+        Me.Button2.TabIndex = 13
+        Me.Button2.Text = "Generate now"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'JetSet
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TextBoxName)
@@ -210,7 +226,7 @@ Partial Class JetSet
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "JetSet"
-        Me.Size = New System.Drawing.Size(651, 272)
+        Me.Size = New System.Drawing.Size(660, 279)
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
@@ -242,4 +258,5 @@ Partial Class JetSet
     Friend WithEvents TextBoxName As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents SaveFileDialog1 As SaveFileDialog
+    Friend WithEvents Button2 As Button
 End Class

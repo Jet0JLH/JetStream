@@ -29,6 +29,10 @@ Partial Class JetStream
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.SaveConfigToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoadConfigToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.MenuStrip1.SuspendLayout()
         Me.FlowLayoutPanel2.SuspendLayout()
         Me.SuspendLayout()
@@ -45,7 +49,7 @@ Partial Class JetStream
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CloseToolStripMenuItem})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoadConfigToolStripMenuItem, Me.SaveConfigToolStripMenuItem, Me.CloseToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(44, 24)
         Me.FileToolStripMenuItem.Text = "File"
@@ -87,6 +91,28 @@ Partial Class JetStream
         Me.FlowLayoutPanel2.Size = New System.Drawing.Size(162, 422)
         Me.FlowLayoutPanel2.TabIndex = 0
         '
+        'SaveFileDialog1
+        '
+        Me.SaveFileDialog1.Filter = "Configuration|*.xml"
+        '
+        'SaveConfigToolStripMenuItem
+        '
+        Me.SaveConfigToolStripMenuItem.Image = Global.JetStream.My.Resources.Resources.save
+        Me.SaveConfigToolStripMenuItem.Name = "SaveConfigToolStripMenuItem"
+        Me.SaveConfigToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
+        Me.SaveConfigToolStripMenuItem.Text = "Save config"
+        '
+        'LoadConfigToolStripMenuItem
+        '
+        Me.LoadConfigToolStripMenuItem.Image = Global.JetStream.My.Resources.Resources.file
+        Me.LoadConfigToolStripMenuItem.Name = "LoadConfigToolStripMenuItem"
+        Me.LoadConfigToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
+        Me.LoadConfigToolStripMenuItem.Text = "Load config"
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.Filter = "Configuration|*.xml"
+        '
         'JetStream
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -112,4 +138,8 @@ Partial Class JetStream
     Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel
     Friend WithEvents Button1 As Button
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents SaveConfigToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SaveFileDialog1 As SaveFileDialog
+    Friend WithEvents LoadConfigToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class

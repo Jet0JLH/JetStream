@@ -81,7 +81,7 @@
             PreviewLabel.Text = expandVars(RichTextBox1.Text)
             Try
                 If CheckBox1.Checked Then
-                    My.Computer.FileSystem.WriteAllText(SaveFileDialog1.FileName, PreviewLabel.Text, False)
+                    My.Computer.FileSystem.WriteAllText(TextBox1.Text, PreviewLabel.Text, False)
                 End If
             Catch ex As Exception
                 CheckBox1.Checked = False
@@ -101,5 +101,25 @@
             Case DialogResult.OK
                 TextBox1.Text = SaveFileDialog1.FileName
         End Select
+    End Sub
+    Public Function generateSave() As XElement
+        Dim tempElement As New XElement(<jetset><name></name><content></content><interval></interval><file></file><active></active></jetset>)
+        tempElement.Element("name").Value = TextBoxName.Text
+        tempElement.Element("content").Value = RichTextBox1.Text
+        tempElement.Element("interval").Value = NumericUpDown1.Value
+        tempElement.Element("file").Value = TextBox1.Text
+        tempElement.Element("active").Value = CheckBox1.Checked
+        Return tempElement
+    End Function
+    Public Sub loadSave(config As XElement)
+        CheckBox1.Checked = False
+        TextBoxName.Text = config.Element("name").Value
+        RichTextBox1.Text = config.Element("content").Value
+        NumericUpDown1.Value = config.Element("interval").Value
+        TextBox1.Text = config.Element("file").Value
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        timerCount = Integer.MaxValue
     End Sub
 End Class
