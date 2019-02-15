@@ -39,8 +39,8 @@ Partial Class JetSet
         Me.TextBoxName = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -174,7 +174,7 @@ Partial Class JetSet
         '
         'TextBoxName
         '
-        Me.TextBoxName.Location = New System.Drawing.Point(132, 5)
+        Me.TextBoxName.Location = New System.Drawing.Point(138, 5)
         Me.TextBoxName.Name = "TextBoxName"
         Me.TextBoxName.Size = New System.Drawing.Size(202, 22)
         Me.TextBoxName.TabIndex = 11
@@ -192,6 +192,15 @@ Partial Class JetSet
         '
         Me.SaveFileDialog1.Filter = "Textfile|*.txt"
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(6, 54)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(144, 23)
+        Me.Button2.TabIndex = 13
+        Me.Button2.Text = "Generate now"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'Button1
         '
         Me.Button1.BackgroundImage = Global.JetStream.My.Resources.Resources._Exit
@@ -201,15 +210,6 @@ Partial Class JetSet
         Me.Button1.Size = New System.Drawing.Size(35, 35)
         Me.Button1.TabIndex = 10
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(6, 54)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(109, 23)
-        Me.Button2.TabIndex = 13
-        Me.Button2.Text = "Generate now"
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'JetSet
         '

@@ -20,7 +20,7 @@
 
     Private Sub SaveConfigToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveConfigToolStripMenuItem.Click
         Dim config As New XDocument(<conf></conf>)
-        For Each item As JetSet In FlowLayoutPanel1.Controls
+        For Each item In FlowLayoutPanel1.Controls
             config.Element("conf").Add(item.generateSave)
         Next
         Select Case SaveFileDialog1.ShowDialog
@@ -39,6 +39,11 @@
                 Try
                     Dim config As XDocument = XDocument.Load(OpenFileDialog1.FileName)
                     clearJetSets()
+                    For Each item As XElement In config.Element("conf").Elements("jetcountdown")
+                        Dim tempJetCountdown As New JetCountdown
+                        tempJetCountdown.loadSave(item)
+                        FlowLayoutPanel1.Controls.Add(tempJetCountdown)
+                    Next
                     For Each item As XElement In config.Element("conf").Elements("jetset")
                         Dim tempJetSet As New JetSet
                         tempJetSet.loadSave(item)
@@ -50,8 +55,19 @@
         End Select
     End Sub
     Sub clearJetSets()
-        For Each item As JetSet In FlowLayoutPanel1.Controls
+        For Each item In FlowLayoutPanel1.Controls
             item.Dispose()
         Next
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim tempName As String = InputBox("Name of the new countdown", "New countdown", "")
+        If tempName = "" Then
+            MsgBox("Pleas set a name")
+        Else
+            Dim tempJetSet As New JetCountdown
+            tempJetSet.TextBoxName.Text = tempName
+            FlowLayoutPanel1.Controls.Add(tempJetSet)
+        End If
     End Sub
 End Class
